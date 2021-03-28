@@ -1,3 +1,5 @@
 <!-- Dependencies:
 FE:
-styled-components -->
+styled-components
+material-ui icons
+ -->
