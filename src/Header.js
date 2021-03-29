@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import SearchIcon from '@material-ui/icons/Search'
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart'
 import LocationOnIcon from '@material-ui/icons/LocationOn'
+import { Link } from 'react-router-dom'
 
 function Header() {
 	return (
@@ -37,8 +38,10 @@ function Header() {
 				</HeaderOption>
 
 				<HeaderOptionCart>
-					<AddShoppingCartIcon />
-					<CartCount>5</CartCount>
+					<Link to='/cart'>
+						<AddShoppingCartIcon />
+						<CartCount>5</CartCount>
+					</Link>
 				</HeaderOptionCart>
 			</HeaderNavItems>
 		</Container>
@@ -119,8 +122,16 @@ const HeaderOption = styled.div`
 
 const HeaderOptionCart = styled.div`
 	display: flex;
-	align-items: center;
-	padding-right: 9px;
+
+	// a tag is a link tag and has odd default color (purple) and text-decoration values (underline) which is why I am hard coding here.
+
+	a {
+		display: flex;
+		align-items: center;
+		padding-right: 9px;
+		color: white;
+		text-decoration: none;
+	}
 `
 
 const CartCount = styled.div`
